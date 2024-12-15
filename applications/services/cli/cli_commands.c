@@ -250,8 +250,7 @@ void cli_command_whoami(Cli* cli, FuriString* args, void* context) {
     UNUSED(cli);
     UNUSED(args);
     UNUSED(context);
-    printf("you@" ANSI_FG_BLUE"%s", furi_hal_version_get_name_ptr());
-    printf(ANSI_RESET"");
+    printf("you@" "%s", furi_hal_version_get_name_ptr());
 }
 
 void cli_command_help(Cli* cli, FuriString* args, void* context) {
