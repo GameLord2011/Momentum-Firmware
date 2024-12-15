@@ -12,7 +12,7 @@
 #define TAG "CliSrv"
 
 #define CLI_INPUT_LEN_LIMIT 256
-#define CLI_PROMPT          ">: " // qFlipper does not recognize us if we use escape sequences :(
+#define CLI_PROMPT          ">: " // qFlipper does not recognize us if we use escape sequences :(, Also DO NOT CHANGE THIS! It will make qFlipper not recognise the flipper zero.
 #define CLI_PROMPT_LENGTH   3 // printable characters
 
 Cli* cli_alloc(void) {

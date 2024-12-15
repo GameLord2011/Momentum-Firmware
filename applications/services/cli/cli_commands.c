@@ -74,7 +74,6 @@ void cli_command_neofetch(Cli* cli, FuriString* args, void* context) {
         "                                "
     };
 #define NEOFETCH_COLOR ANSI_FG_BLUE
-#define NEOFETCH_INFO_COLOR ANSI_FLIPPER_BRAND_ORANGE
 
     // Determine logo parameters
     size_t logo_height = COUNT_OF(neofetch_logo), logo_width = 0;
@@ -125,7 +124,7 @@ void cli_command_neofetch(Cli* cli, FuriString* args, void* context) {
     // Print ASCII art with info
     const size_t info_height = 16;
     for(size_t i = 0; i < MAX(logo_height, info_height); i++) {
-        printf(NEOFETCH_COLOR "%-*s", logo_width, (i < logo_height) ? neofetch_logo[i] : "" NEOFETCH_INFO_COLOR);
+        printf(NEOFETCH_COLOR "%-*s", logo_width, (i < logo_height) ? neofetch_logo[i] : "");
         switch(i) {
         case 0: // you@<hostname>
             printf("you" ANSI_RESET "@" "%s", furi_hal_version_get_name_ptr());
@@ -206,7 +205,53 @@ void cli_command_neofetch(Cli* cli, FuriString* args, void* context) {
     }
     printf(ANSI_RESET);
 #undef NEOFETCH_COLOR
-#undef NEOFETCH_INFO_COLOR
+}
+
+//Credits
+void cli_command_credits(Cli* cli, FuriString* args, void* context) {
+    UNUSED(cli);
+    UNUSED(args);
+    UNUSED(context);
+    printf(
+        "\r\n"
+        "\e[34m+-----------------+\e[0m\r\n"
+        "\e[34m|\e[0m     Credits     \e[34m|\e[0m\r\n"
+        "\e[34m+-----------------+\e[0m\r\n"
+        "\e[34m|\e[0mOriginal Code By:\e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m    \033[1;38;2;255;130m@WillyJL\033[0m     \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m    \033[1;38;2;255;130m@HaxSam\033[0m      \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m    \033[1;38;2;255;130m@Sil333033\033[0m   \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m\033[1;38;2;255;130m@MatthewKuKanich\033[0m \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m   \033[1;38;2;255;130m@KlaraCrazy\033[0m   \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m+-----------------+\e[0m\r\n"
+        "\e[34m|\e[0m     Assets:     \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m    \033[1;38;2;255;130m@Kuronons\033[0m    \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m+-----------------+\e[0m\r\n"
+        "\e[34m|\e[0m   Modded by:    \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m  \033[1;31m@GameLord2011\033[0m  \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m+-----------------+\r\n\e[0m"
+        "\e[34m|\e[0m      EOF        \e[34m|\e[0m\r\n"
+        "\e[34m+-----------------+\r\n\e[0m"
+        "\r\n"
+    );
+}
+
+void cli_command_whoami(Cli* cli, FuriString* args, void* context) {
+    UNUSED(cli);
+    UNUSED(args);
+    UNUSED(context);
+    printf("you@" ANSI_FG_BLUE"%s", furi_hal_version_get_name_ptr());
+    printf(ANSI_RESET"");
 }
 
 void cli_command_help(Cli* cli, FuriString* args, void* context) {
@@ -687,6 +732,8 @@ void cli_command_i2c(Cli* cli, FuriString* args, void* context) {
 CLI_PLUGIN_WRAPPER("info", cli_command_info)
 CLI_PLUGIN_WRAPPER("src", cli_command_src)
 CLI_PLUGIN_WRAPPER("neofetch", cli_command_neofetch)
+CLI_PLUGIN_WRAPPER("credits", cli_command_credits)
+CLI_PLUGIN_WRAPPER("whoami", cli_command_whoami)
 CLI_PLUGIN_WRAPPER("help", cli_command_help)
 CLI_PLUGIN_WRAPPER("uptime", cli_command_uptime)
 CLI_PLUGIN_WRAPPER("date", cli_command_date)
@@ -706,10 +753,17 @@ void cli_commands_init(Cli* cli) {
     cli_add_command(
         cli,
         "neofetch",
-        CliCommandFlagParallelSafe | CliCommandFlagHidden,
+        CliCommandFlagParallelSafe,
         cli_command_neofetch_wrapper,
         NULL);
-
+    cli_add_command(cli,
+        "credits",
+        CliCommandFlagParallelSafe,
+        cli_command_credits_wrapper ,
+        NULL);
+    cli_add_command(cli, "whoami", CliCommandFlagParallelSafe,
+        cli_command_whoami_wrapper ,
+        NULL);
     cli_add_command(cli, "?", CliCommandFlagParallelSafe, cli_command_help_wrapper, NULL);
     cli_add_command(cli, "help", CliCommandFlagParallelSafe, cli_command_help_wrapper, NULL);
 

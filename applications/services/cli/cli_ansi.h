@@ -9,6 +9,7 @@ extern "C" {
 #define ANSI_RESET "\e[0m"
 #define ANSI_BOLD  "\e[1m"
 #define ANSI_FAINT "\e[2m"
+#define ANSI_RESET_COLORS "\e[39m"
 
 #define ANSI_FG_BLACK      "\e[30m"
 #define ANSI_FG_RED        "\e[31m"
@@ -45,6 +46,8 @@ extern "C" {
 #define ANSI_BG_BR_WHITE   "\e[107m"
 
 #define ANSI_FLIPPER_BRAND_ORANGE "\e[38;2;255;130;0m"
+
+//TODO add many more ansi sequences (blink, slow blink, etc.) 
 
 typedef enum {
     CliKeyUnrecognized = 0,
