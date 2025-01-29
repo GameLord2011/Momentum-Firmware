@@ -173,7 +173,7 @@ void flipper_init(void) {
     Canvas* canvas = canvas_init();
     canvas_draw_icon(canvas, 33, 16, &I_Updating_Logo_62x15);
     if(furi_hal_is_normal_boot()) {
-        canvas_draw_icon(canvas, 19, 44, &I_SDcardMounted_11x8);
+        canvas_draw_icon(canvas, 19, 43, &I_floppydisk_10px);
     }
     canvas_commit(canvas);
 #endif

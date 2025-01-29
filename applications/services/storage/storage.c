@@ -8,7 +8,7 @@
 
 #define STORAGE_TICK 1000
 
-#define ICON_SD_MOUNTED &I_SDcardMounted_11x8
+#define ICON_SD_MOUNTED &I_floppydisk_10px
 #define ICON_SD_ERROR   &I_SDcardFail_11x8
 
 #define TAG "Storage"
@@ -23,7 +23,7 @@ static void storage_app_sd_icon_draw_callback(Canvas* canvas, void* context) {
     case StorageStatusNotReady:
         break;
     case StorageStatusOK:
-        canvas_draw_icon(canvas, 0, 0, ICON_SD_MOUNTED);
+        canvas_draw_icon(canvas, 0, -1, ICON_SD_MOUNTED);
         break;
     default:
         canvas_draw_icon(canvas, 0, 0, ICON_SD_ERROR);

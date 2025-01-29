@@ -98,3 +98,21 @@ App(
     requires=["cli"],
     sources=["cli_commands.c"],
 )
+
+App(
+    appid="credits_cli",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_command_credits_plugin_ep",
+    requires=["cli"],
+    sources=["cli_commands.c"]
+)
+
+App(
+    appid="whoami_cli",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_command_whoami_plugin_ep",
+    requires=["cli"],
+    sources=["cli_commands.c"]
+)

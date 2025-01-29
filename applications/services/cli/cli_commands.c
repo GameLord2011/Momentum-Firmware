@@ -62,18 +62,18 @@ void cli_command_neofetch(Cli* cli, FuriString* args, void* context) {
     UNUSED(context);
 
     static const char* const neofetch_logo[] = {
-        "            _.-------.._                    -,",
-        "        .-\"```\"--..,,_/ /`-,               -,  \\ ",
-        "     .:\"          /:/  /'\\  \\     ,_...,  `. |  |",
-        "    /       ,----/:/  /`\\ _\\~`_-\"`     _;",
-        "   '      / /`\"\"\"'\\ \\ \\.~`_-'      ,-\"'/ ",
-        "  |      | |  0    | | .-'      ,/`  /",
-        " |    ,..\\ \\     ,.-\"`       ,/`    /",
-        ";    :    `/`\"\"\\`           ,/--==,/-----,",
-        "|    `-...|        -.___-Z:_______J...---;",
-        ":         `                           _-'",
+        "__/\\\\\\\\____________/\\\\\\\\_________",
+        "__\\/\\\\\\\\\\\\________/\\\\\\\\\\\\________",
+        "___\\/\\\\\\//\\\\\\____/\\\\\\//\\\\\\_______",
+        "____\\/\\\\\\\\///\\\\\\/\\\\\\/_\\/\\\\\\______",
+        "_____\\/\\\\\\__\\///\\\\\\/___\\/\\\\\\_____",
+        "______\\/\\\\\\____\\///_____\\/\\\\\\____",
+        "_______\\/\\\\\\_____________\\/\\\\\\___",
+        "________\\/\\\\\\_____________\\/\\\\\\__",
+        "_________\\///______________///___",
+        "                                ",
     };
-#define NEOFETCH_COLOR ANSI_FLIPPER_BRAND_ORANGE
+#define NEOFETCH_COLOR ANSI_FG_BLUE
 
     // Determine logo parameters
     size_t logo_height = COUNT_OF(neofetch_logo), logo_width = 0;
@@ -84,7 +84,7 @@ void cli_command_neofetch(Cli* cli, FuriString* args, void* context) {
     // Format hostname delimiter
     const size_t size_of_hostname = 4 + strlen(furi_hal_version_get_name_ptr());
     char delimiter[64];
-    memset(delimiter, '-', size_of_hostname);
+    memset(delimiter, '~', size_of_hostname);
     delimiter[size_of_hostname] = '\0';
 
     // Get heap info
@@ -132,9 +132,9 @@ void cli_command_neofetch(Cli* cli, FuriString* args, void* context) {
         case 1: // delimiter
             printf(ANSI_RESET "%s", delimiter);
             break;
-        case 2: // OS: FURI <edition> <branch> <version> <commit> (SDK <maj>.<min>)
+        case 2: // FW: FURI <edition> <branch> <version> <commit> (SDK <maj>.<min>)
             printf(
-                "OS" ANSI_RESET ": FURI %s %s %s %s (SDK %hu.%hu)",
+                "FW" ANSI_RESET ": FURI %s %s %s %s (SDK %hu.%hu)",
                 version_get_version(version),
                 version_get_gitbranch(version),
                 version_get_version(version),
@@ -689,6 +689,52 @@ void cli_command_clear(Cli* cli, FuriString* args, void* context) {
     printf("\e[2J\e[H");
 }
 
+//Credits
+void cli_command_credits(Cli* cli, FuriString* args, void* context) {
+    UNUSED(cli);
+    UNUSED(args);
+    UNUSED(context);
+    printf(
+        "\r\n"
+        "\e[34m+-----------------+\e[0m\r\n"
+        "\e[34m|\e[0m     Credits     \e[34m|\e[0m\r\n"
+        "\e[34m+-----------------+\e[0m\r\n"
+        "\e[34m|\e[0mOriginal Code By:\e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m    \033[1;38;2;255;130m@WillyJL\033[0m     \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m    \033[1;38;2;255;130m@HaxSam\033[0m      \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m    \033[1;38;2;255;130m@Sil333033\033[0m   \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m\033[1;38;2;255;130m@MatthewKuKanich\033[0m \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m   \033[1;38;2;255;130m@KlaraCrazy\033[0m   \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m+-----------------+\e[0m\r\n"
+        "\e[34m|\e[0m     Assets:     \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m    \033[1;38;2;255;130m@Kuronons\033[0m    \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m+-----------------+\e[0m\r\n"
+        "\e[34m|\e[0m   Modded by:    \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m  \033[1;31m@GameLord2011\033[0m  \e[34m|\e[0m\r\n"
+        "\e[34m|\e[0m                 \e[34m|\e[0m\r\n"
+        "\e[34m+-----------------+\r\n\e[0m"
+        "\e[34m|\e[0m      EOF        \e[34m|\e[0m\r\n"
+        "\e[34m+-----------------+\r\n\e[0m"
+        "\r\n"
+    );
+}
+
+void cli_command_whoami(Cli* cli, FuriString* args, void* context) {
+    UNUSED(cli);
+    UNUSED(args);
+    UNUSED(context);
+    printf("you@" "%s", furi_hal_version_get_name_ptr());
+}
+
 CLI_PLUGIN_WRAPPER("src", cli_command_src)
 CLI_PLUGIN_WRAPPER("neofetch", cli_command_neofetch)
 CLI_PLUGIN_WRAPPER("help", cli_command_help)
@@ -700,6 +746,8 @@ CLI_PLUGIN_WRAPPER("led", cli_command_led)
 CLI_PLUGIN_WRAPPER("gpio", cli_command_gpio)
 CLI_PLUGIN_WRAPPER("i2c", cli_command_i2c)
 CLI_PLUGIN_WRAPPER("clear", cli_command_clear)
+CLI_PLUGIN_WRAPPER("credits", cli_command_credits)
+CLI_PLUGIN_WRAPPER("whoami", cli_command_whoami)
 
 void cli_commands_init(Cli* cli) {
     cli_add_command(cli, "!", CliCommandFlagParallelSafe, cli_command_info, (void*)true);
@@ -707,12 +755,7 @@ void cli_commands_init(Cli* cli) {
     cli_add_command(cli, "device_info", CliCommandFlagParallelSafe, cli_command_info, (void*)true);
     cli_add_command(cli, "source", CliCommandFlagParallelSafe, cli_command_src_wrapper, NULL);
     cli_add_command(cli, "src", CliCommandFlagParallelSafe, cli_command_src_wrapper, NULL);
-    cli_add_command(
-        cli,
-        "neofetch",
-        CliCommandFlagParallelSafe | CliCommandFlagHidden,
-        cli_command_neofetch_wrapper,
-        NULL);
+    cli_add_command(cli,"neofetch",CliCommandFlagParallelSafe,cli_command_neofetch_wrapper,NULL);
 
     cli_add_command(cli, "?", CliCommandFlagParallelSafe, cli_command_help_wrapper, NULL);
     cli_add_command(cli, "help", CliCommandFlagParallelSafe, cli_command_help_wrapper, NULL);
@@ -733,4 +776,7 @@ void cli_commands_init(Cli* cli) {
 
     cli_add_command(cli, "clear", CliCommandFlagParallelSafe, cli_command_clear, NULL);
     cli_add_command(cli, "cls", CliCommandFlagParallelSafe, cli_command_clear, NULL);
+
+    cli_add_command(cli, "credits", CliCommandFlagParallelSafe, cli_command_credits_wrapper, NULL);
+    cli_add_command(cli, "whoami", CliCommandFlagParallelSafe, cli_command_whoami_wrapper, NULL);
 }
