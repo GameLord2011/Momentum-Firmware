@@ -338,7 +338,7 @@ void cli_command_src(Cli* cli, FuriString* args, void* context) {
     UNUSED(args);
     UNUSED(context);
 
-    printf("https://github.com/Next-Flip/Momentum-Firmware");
+    printf("https://github.com/GameLord2011/Momentum-Firmware");
 }
 
 #define CLI_COMMAND_LOG_RING_SIZE   2048
