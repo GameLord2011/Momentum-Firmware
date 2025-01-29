@@ -7,7 +7,7 @@
 ```bash
 To download the repository:
 $ git clone --recursive --jobs 8 https://github.com/GameLord2011/Momentum-Improved.git
-$ cd Momentum-Firmware/
+$ cd Momentum-Improved/
 
 To flash directly to the Flipper (Needs to be connected via USB, qFlipper closed)
 $ ./fbt flash_usb_full
