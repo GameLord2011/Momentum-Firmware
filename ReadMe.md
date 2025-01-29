@@ -1,12 +1,12 @@
 # This is a custom flipper zero firmware buitl off of Next-Flip/Momentum-Firmware
 
 ----
-<br>
-<h2 align="center">Build it yourself:</h2>
+
+## Build it yourself
 
 ```bash
 To download the repository:
-$ git clone --recursive --jobs 8 https://github.com/GameLord2011/Momentum-Improved.git
+$ git clone --recursive --jobs 8 https://github.com/GameLord2011/Momentum-Firmware.git
 $ cd Momentum-Improved/
 
 To flash directly to the Flipper (Needs to be connected via USB, qFlipper closed)
