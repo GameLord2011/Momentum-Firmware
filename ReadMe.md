@@ -7,7 +7,10 @@
 ```bash
 To download the repository:
 $ git clone --recursive --jobs 8 https://github.com/GameLord2011/Momentum-Firmware.git
-$ cd Momentum-Improved/
+$ cd Momentum-Firmware/
+
+To set up vsCode
+$ ./fbt vscode_dist
 
 To flash directly to the Flipper (Needs to be connected via USB, qFlipper closed)
 $ ./fbt flash_usb_full
