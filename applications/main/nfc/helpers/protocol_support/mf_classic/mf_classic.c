@@ -15,6 +15,11 @@ enum {
     SubmenuIndexDictAttack,
     SubmenuIndexCrackNonces,
     SubmenuIndexUpdate,
+<<<<<<< HEAD
+    SubmenuIndexDictAttack,
+    SubmenuIndexCrackNonces,
+=======
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
 };
 
 static void nfc_scene_info_on_enter_mf_classic(NfcApp* instance) {
@@ -212,6 +217,11 @@ static bool nfc_scene_read_menu_on_event_mf_classic(NfcApp* instance, SceneManag
                    instance->scene_manager, NfcSceneMfClassicDictAttack)) {
                 scene_manager_next_scene(instance->scene_manager, NfcSceneMfClassicDictAttack);
             }
+            consumed = true;
+        } else if(event.event == SubmenuIndexCrackNonces) {
+            scene_manager_set_scene_state(
+                instance->scene_manager, NfcSceneSaveConfirm, NfcSceneSaveConfirmStateCrackNonces);
+            scene_manager_next_scene(instance->scene_manager, NfcSceneSaveConfirm);
             consumed = true;
         } else if(event.event == SubmenuIndexCrackNonces) {
             scene_manager_set_scene_state(

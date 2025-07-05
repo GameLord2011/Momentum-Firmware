@@ -40,13 +40,13 @@ static void render_callback(Canvas* canvas, void* _ctx) {
 
     if(stats->butthurt <= 4) {
         portrait = &I_passport_happy_46x49;
-        mood_str = "Mood: Happy";
+        mood_str = "0_o< Happy";
     } else if(stats->butthurt <= 9) {
         portrait = &I_passport_okay_46x49;
-        mood_str = "Mood: Okay";
+        mood_str = "0_o< Ok";
     } else {
         portrait = &I_passport_bad_46x49;
-        mood_str = "Mood: Angry";
+        mood_str = "0_o< Pissed";
     }
 
     uint32_t xp_progress = 0;

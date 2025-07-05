@@ -523,7 +523,10 @@ static void lfrfid_worker_mode_write_process(LFRFIDWorker* worker) {
 
     while(!lfrfid_worker_check_for_stop(worker)) {
         FURI_LOG_D(TAG, "Data write");
+<<<<<<< HEAD
+=======
         furi_delay_ms(5); // halt
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
         uint16_t skips = 0;
         for(size_t i = 0; i < LFRFIDWriteTypeMax; i++) {
             memset(request, 0, sizeof(LFRFIDWriteRequest));

@@ -22,6 +22,34 @@ App(
 # Protocol support plugins
 
 App(
+<<<<<<< HEAD
+    appid="nfc_emv",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="nfc_emv_ep",
+    requires=["nfc"],
+    sources=[
+        "helpers/protocol_support/emv/*.c",
+    ],
+    fal_embedded=True,
+)
+
+App(
+    appid="nfc_felica",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="nfc_felica_ep",
+    requires=["nfc"],
+    sources=[
+        "helpers/protocol_support/felica/*.c",
+        "helpers/felica_*.c",
+    ],
+    fal_embedded=True,
+)
+
+App(
+=======
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     appid="nfc_iso14443_3a",
     targets=["f7"],
     apptype=FlipperAppType.PLUGIN,
@@ -84,6 +112,8 @@ App(
 )
 
 App(
+<<<<<<< HEAD
+=======
     appid="nfc_felica",
     targets=["f7"],
     apptype=FlipperAppType.PLUGIN,
@@ -112,6 +142,7 @@ App(
 )
 
 App(
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     appid="nfc_mf_classic",
     targets=["f7"],
     apptype=FlipperAppType.PLUGIN,
@@ -126,6 +157,23 @@ App(
 )
 
 App(
+<<<<<<< HEAD
+    appid="nfc_mf_desfire",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="nfc_mf_desfire_ep",
+    requires=["nfc"],
+    sources=[
+        "helpers/protocol_support/mf_desfire/*.c",
+        "helpers/protocol_support/iso14443_4a/*.c",
+        "helpers/protocol_support/iso14443_3a/*.c",
+    ],
+    fal_embedded=True,
+)
+
+App(
+=======
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     appid="nfc_mf_plus",
     targets=["f7"],
     apptype=FlipperAppType.PLUGIN,
@@ -140,6 +188,19 @@ App(
 )
 
 App(
+<<<<<<< HEAD
+    appid="nfc_mf_ultralight",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="nfc_mf_ultralight_ep",
+    requires=["nfc"],
+    sources=[
+        "helpers/protocol_support/mf_ultralight/*.c",
+        "helpers/protocol_support/iso14443_3a/*.c",
+        "helpers/mf_ultralight_*.c",
+    ],
+    fap_libs=["mbedtls"],
+=======
     appid="nfc_mf_desfire",
     targets=["f7"],
     apptype=FlipperAppType.PLUGIN,
@@ -150,6 +211,7 @@ App(
         "helpers/protocol_support/iso14443_4a/*.c",
         "helpers/protocol_support/iso14443_3a/*.c",
     ],
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     fal_embedded=True,
 )
 
@@ -176,6 +238,8 @@ App(
         "helpers/protocol_support/st25tb/*.c",
     ],
     fal_embedded=True,
+<<<<<<< HEAD
+=======
 )
 
 
@@ -216,6 +280,7 @@ App(
         "helpers/protocol_support/emv/*.c",
     ],
     fal_embedded=True,
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
 )
 
 # Parser plugins
@@ -559,6 +624,15 @@ App(
 )
 
 App(
+<<<<<<< HEAD
+    appid="cli_nfc",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_nfc_ep",
+    requires=["cli"],
+    sources=["nfc_cli.c"],
+)
+=======
     appid="ventra_parser",
     apptype=FlipperAppType.PLUGIN,
     entry_point="ventra_plugin_ep",
@@ -575,3 +649,4 @@ App(
     requires=["cli"],
     sources=["nfc_cli.c"],
 )
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5

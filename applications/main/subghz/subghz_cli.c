@@ -1090,7 +1090,11 @@ static void subghz_cli_command_chat(PipeSide* pipe, FuriString* args) {
                 break;
             }
         }
+<<<<<<< HEAD
+        if(!cli_is_pipe_broken_or_is_etx_next_char(pipe)) {
+=======
         if(cli_is_pipe_broken_or_is_etx_next_char(pipe)) {
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
             printf("\r\n");
             chat_event.event = SubGhzChatEventUserExit;
             subghz_chat_worker_put_event_chat(subghz_chat, &chat_event);

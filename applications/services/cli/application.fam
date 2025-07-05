@@ -35,6 +35,44 @@ App(
 )
 
 App(
+<<<<<<< HEAD
+    appid="cli_whoami",
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_whoami_ep",
+    requires=["cli"],
+    sources=["commands/whoami.c"],
+)
+
+App(
+    appid="cli_credits",
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_credits_ep",
+    requires=["cli"],
+    sources=["commands/credits.c"],
+)
+
+App(
+    appid="cli_neofetch",
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_neofetch_ep",
+    requires=["cli"],
+    sources=["commands/neofetch.c"],
+)
+
+App(
+    appid="cli_subshell_demo",
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_subshell_demo_ep",
+    requires=["cli"],
+    sources=["commands/subshell_demo.c"],
+)
+
+App(
+    appid="cli_src",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_src_ep",
+=======
     appid="cli_neofetch",
     apptype=FlipperAppType.PLUGIN,
     entry_point="cli_neofetch_ep",
@@ -73,20 +111,61 @@ App(
     targets=["f7"],
     apptype=FlipperAppType.PLUGIN,
     entry_point="cli_date_ep",
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     requires=["cli"],
     sources=["cli_main_commands.c"],
 )
 
 App(
+<<<<<<< HEAD
+    appid="cli_uptime",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_uptime_ep",
+=======
     appid="cli_sysctl",
     targets=["f7"],
     apptype=FlipperAppType.PLUGIN,
     entry_point="cli_sysctl_ep",
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     requires=["cli"],
     sources=["cli_main_commands.c"],
 )
 
 App(
+<<<<<<< HEAD
+    appid="cli_date",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_date_ep",
+=======
+    appid="cli_top",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_top_ep",
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
+    requires=["cli"],
+    sources=["cli_main_commands.c"],
+)
+
+App(
+<<<<<<< HEAD
+    appid="cli_sysctl",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_sysctl_ep",
+=======
+    appid="cli_vibro",
+    targets=["f7"],
+    apptype=FlipperAppType.PLUGIN,
+    entry_point="cli_vibro_ep",
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
+    requires=["cli"],
+    sources=["cli_main_commands.c"],
+)
+
+App(
+<<<<<<< HEAD
     appid="cli_top",
     targets=["f7"],
     apptype=FlipperAppType.PLUGIN,
@@ -105,6 +184,8 @@ App(
 )
 
 App(
+=======
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     appid="cli_led",
     targets=["f7"],
     apptype=FlipperAppType.PLUGIN,

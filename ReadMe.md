@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+# This is a custom flipper zero firmware buitl off of Next-Flip/Momentum-Firmware
+
+----
+
+## Build it yourself
+=======
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo_dark.png">
@@ -175,11 +182,15 @@ There are 4 methods to install Momentum, we recommend you use the **Web Updater*
 <br>
 
 <h2 align="center">Build it yourself</h2>
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
 
 ```bash
 To download the repository:
-$ git clone --recursive --jobs 8 https://github.com/Next-Flip/Momentum-Firmware.git
+$ git clone --recursive --jobs 8 https://github.com/GameLord2011/Momentum-Firmware.git
 $ cd Momentum-Firmware/
+
+To set up vsCode
+$ ./fbt vscode_dist
 
 To flash directly to the Flipper (Needs to be connected via USB, qFlipper closed)
 $ ./fbt flash_usb_full
@@ -191,6 +202,8 @@ To build and launch a single app:
 $ ./fbt launch APPSRC=your_appid
 ```
 
+<<<<<<< HEAD
+=======
 <h2 align="center">Stargazers over time</h2>
 
 [![Stargazers over time](https://starchart.cc/Next-Flip/Momentum-Firmware.svg?variant=adaptive)](https://starchart.cc/Next-Flip/Momentum-Firmware)
@@ -206,3 +219,4 @@ If you enjoy the firmware please __**spread the word!**__ And if you really love
 > **BTC**: `1EnCi1HF8Jw6m2dWSUwHLbCRbVBCQSyDKm`
 
 **Thank you <3**
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5

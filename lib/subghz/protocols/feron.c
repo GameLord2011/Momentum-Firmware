@@ -66,8 +66,11 @@ const SubGhzProtocol subghz_protocol_feron = {
 
     .decoder = &subghz_protocol_feron_decoder,
     .encoder = &subghz_protocol_feron_encoder,
+<<<<<<< HEAD
+=======
 
     .filter = SubGhzProtocolFilter_Sensors,
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
 };
 
 void* subghz_protocol_encoder_feron_alloc(SubGhzEnvironment* environment) {

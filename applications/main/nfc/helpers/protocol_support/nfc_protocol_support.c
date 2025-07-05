@@ -114,8 +114,11 @@ const char* nfc_protocol_support_plugin_names[NfcProtocolNum] = {
     [NfcProtocolMfDesfire] = "mf_desfire",
     [NfcProtocolSlix] = "slix",
     [NfcProtocolSt25tb] = "st25tb",
+<<<<<<< HEAD
+=======
     [NfcProtocolNtag4xx] = "ntag4xx",
     [NfcProtocolType4Tag] = "type_4_tag",
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     [NfcProtocolEmv] = "emv",
     /* Add new protocol support plugin names here */
 };
@@ -412,6 +415,8 @@ static void nfc_protocol_support_scene_read_menu_on_enter(NfcApp* instance) {
             instance);
     }
 
+<<<<<<< HEAD
+=======
     if(nfc_protocol_support_has_feature(protocol, instance, NfcProtocolFeatureWrite)) {
         submenu_add_item(
             submenu,
@@ -421,6 +426,7 @@ static void nfc_protocol_support_scene_read_menu_on_enter(NfcApp* instance) {
             instance);
     }
 
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     nfc_protocol_support_get(protocol, instance)->scene_read_menu.on_enter(instance);
 
     submenu_add_item(
@@ -558,6 +564,8 @@ static void nfc_protocol_support_scene_saved_menu_on_enter(NfcApp* instance) {
             instance);
     }
 
+<<<<<<< HEAD
+=======
     if(nfc_protocol_support_has_feature(protocol, instance, NfcProtocolFeatureWrite)) {
         submenu_add_item(
             submenu,
@@ -567,6 +575,7 @@ static void nfc_protocol_support_scene_saved_menu_on_enter(NfcApp* instance) {
             instance);
     }
 
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     if(nfc_protocol_support_has_feature(protocol, instance, NfcProtocolFeatureEditUid)) {
         submenu_add_item(
             submenu,

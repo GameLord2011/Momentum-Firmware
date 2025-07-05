@@ -26,7 +26,11 @@ MfDesfireError mf_desfire_process_status_code(uint8_t status_code) {
         return MfDesfireErrorNone;
     case NXP_NATIVE_COMMAND_STATUS_AUTHENTICATION_ERROR:
         return MfDesfireErrorAuthentication;
+<<<<<<< HEAD
+    case MF_DESFIRE_STATUS_ILLEGAL_COMMAND_CODE:
+=======
     case NXP_NATIVE_COMMAND_STATUS_ILLEGAL_COMMAND_CODE:
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
         return MfDesfireErrorCommandNotSupported;
     default:
         return MfDesfireErrorProtocol;

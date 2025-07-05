@@ -7,6 +7,24 @@
 void cli_main_motd(void* context) {
     UNUSED(context);
     printf(ANSI_FLIPPER_BRAND_ORANGE
+<<<<<<< HEAD
+           "__/\\\\\\\\____________/\\\\\\\\_________\r\n"
+           "__\\/\\\\\\\\\\\\________/\\\\\\\\\\\\________\r\n"
+           "___\\/\\\\\\//\\\\\\____/\\\\\\//\\\\\\_______\r\n"
+           "____\\/\\\\\\\\///\\\\\\/\\\\\\/_\\/\\\\\\______\r\n"
+           "_____\\/\\\\\\__\\///\\\\\\/___\\/\\\\\\_____\r\n"
+           "______\\/\\\\\\____\\///_____\\/\\\\\\____\r\n"
+           "_______\\/\\\\\\_____________\\/\\\\\\___\r\n"
+           "________\\/\\\\\\_____________\\/\\\\\\__\r\n"
+           "_________\\///______________///___\r\n"
+           "\r\n"
+           "Welcome to Flipper Zero Command Line Interface!\r\n"
+           "Read the manual: https://docs.flipper.net/development/cli\r\n"
+           "Run `help` or `?` to list available commands\r\n"
+           "This is running " ANSI_GMLRD_RED "@GameLord2011" ANSI_END_GMLRD_RED
+           "'s fork of momentum fw\r\n" ANSI_BLINKY_RED
+           "https://gamelord2011.vercel.app" ANSI_END_BLINKY_RED "\r\n"
+=======
            "\r\n"
            "              _.-------.._                    -,\r\n"
            "          .-\"```\"--..,,_/ /`-,               -,  \\ \r\n"
@@ -25,6 +43,7 @@ void cli_main_motd(void* context) {
            "\r\n" ANSI_FG_BR_WHITE "Welcome to Flipper Zero Command Line Interface!\r\n"
            "Read the manual: https://docs.flipper.net/development/cli\r\n"
            "Run `help` or `?` to list available commands\r\n"
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
            "\r\n" ANSI_RESET);
 
     const Version* firmware_version = furi_hal_version_get_firmware_version();
