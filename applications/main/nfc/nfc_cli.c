@@ -7,7 +7,10 @@
 #include <lib/nfc/nfc_poller.h>
 #include <lib/nfc/protocols/iso14443_4a/iso14443_4a_poller.h>
 #include <lib/nfc/protocols/iso14443_4b/iso14443_4b_poller.h>
+<<<<<<< HEAD
 #include <lib/nfc/protocols/iso15693_3/iso15693_3_poller.h>
+=======
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
 #include <toolbox/pipe.h>
 
 #include <furi_hal_nfc.h>
@@ -15,13 +18,21 @@
 #define FLAG_EVENT (1 << 10)
 
 #define NFC_MAX_BUFFER_SIZE   (256)
+<<<<<<< HEAD
 #define NFC_BASE_PROTOCOL_MAX (3)
+=======
+#define NFC_BASE_PROTOCOL_MAX (2)
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
 #define POLLER_DONE           (1 << 0)
 #define POLLER_ERR            (1 << 1)
 static NfcProtocol BASE_PROTOCOL[NFC_BASE_PROTOCOL_MAX] = {
     NfcProtocolIso14443_4a,
+<<<<<<< HEAD
     NfcProtocolIso14443_4b,
     NfcProtocolIso15693_3};
+=======
+    NfcProtocolIso14443_4b};
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
 typedef struct ApduContext {
     BitBuffer* tx_buffer;
     BitBuffer* rx_buffer;
@@ -88,6 +99,7 @@ static NfcCommand trx_callback(NfcGenericEvent event, void* context) {
                 furi_thread_flags_set(apdu_context->thread_id, POLLER_ERR);
                 return NfcCommandStop;
             }
+<<<<<<< HEAD
         } else if(NfcProtocolIso15693_3 == event.protocol) {
             Iso15693_3Error err = iso15693_3_poller_send_frame(
                 event.instance,
@@ -101,6 +113,8 @@ static NfcCommand trx_callback(NfcGenericEvent event, void* context) {
                 furi_thread_flags_set(apdu_context->thread_id, POLLER_ERR);
                 return NfcCommandStop;
             }
+=======
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
         } else {
             // should never reach here
             furi_crash("Unknown protocol");

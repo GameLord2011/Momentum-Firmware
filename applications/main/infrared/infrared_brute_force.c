@@ -95,7 +95,12 @@ void infrared_brute_force_set_db_filename(InfraredBruteForce* brute_force, const
 
 InfraredErrorCode infrared_brute_force_calculate_messages(
     InfraredBruteForce* brute_force,
+<<<<<<< HEAD
     bool auto_detect_buttons) {
+=======
+    bool auto_detect_buttons,
+    bool ignore_unknown_buttons) {
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     furi_check(brute_force);
     furi_assert(!brute_force->is_started);
     furi_assert(brute_force->db_filename);
@@ -154,6 +159,11 @@ InfraredErrorCode infrared_brute_force_calculate_messages(
                         auto_detect_button_index++,
                         furi_string_get_cstr(signal_name));
                     record = InfraredBruteForceRecordDict_get(brute_force->records, signal_name);
+<<<<<<< HEAD
+=======
+                } else if(ignore_unknown_buttons) {
+                    continue;
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
                 } else {
                     FURI_LOG_E(TAG, "Unknown signal name: %s", furi_string_get_cstr(signal_name));
                     furi_crash("Unknown signal name");

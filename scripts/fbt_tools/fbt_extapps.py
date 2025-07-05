@@ -329,6 +329,10 @@ def _validate_app_imports(target, source, env):
             "metroflip_",
             "bit_slice_to_dec",
             "byte_to_binary",
+<<<<<<< HEAD
+=======
+            "read_calypso_data",
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
             "read_file",
             "apdu_success",
             "select_app",

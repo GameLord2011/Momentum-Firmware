@@ -48,12 +48,15 @@ extern "C" {
 #define ANSI_BG_BR_WHITE   "\e[107m"
 
 #define ANSI_FLIPPER_BRAND_ORANGE "\e[38;2;255;130;0m"
+<<<<<<< HEAD
 #define CREDITS_ANSI_FLIPPER_BRAND_ORANGE "\e[38;2;255;130m"
 
 #define ANSI_GMLRD_RED "\e[1;5;31m"
 #define ANSI_END_GMLRD_RED "\e[22;25;0m"
 #define ANSI_BLINKY_RED "\e[1;31m"
 #define ANSI_END_BLINKY_RED "\e[22;0m"
+=======
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
 
 // cursor positioning
 

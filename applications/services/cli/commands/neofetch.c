@@ -12,6 +12,7 @@ static void execute(PipeSide* pipe, FuriString* args, void* context) {
     UNUSED(context);
 
     static const char* const neofetch_logo[] = {
+<<<<<<< HEAD
         "__/\\\\\\\\____________/\\\\\\\\_________",
         "__\\/\\\\\\\\\\\\________/\\\\\\\\\\\\________",
         "___\\/\\\\\\//\\\\\\____/\\\\\\//\\\\\\_______",
@@ -25,6 +26,20 @@ static void execute(PipeSide* pipe, FuriString* args, void* context) {
     };
 #define NEOFETCH_COLOR      ANSI_FG_BLUE
 #define NEOFETCH_INFO_COLOR ANSI_FLIPPER_BRAND_ORANGE
+=======
+        "            _.-------.._                    -,",
+        "        .-\"```\"--..,,_/ /`-,               -,  \\ ",
+        "     .:\"          /:/  /'\\  \\     ,_...,  `. |  |",
+        "    /       ,----/:/  /`\\ _\\~`_-\"`     _;",
+        "   '      / /`\"\"\"'\\ \\ \\.~`_-'      ,-\"'/ ",
+        "  |      | |  0    | | .-'      ,/`  /",
+        " |    ,..\\ \\     ,.-\"`       ,/`    /",
+        ";    :    `/`\"\"\\`           ,/--==,/-----,",
+        "|    `-...|        -.___-Z:_______J...---;",
+        ":         `                           _-'",
+    };
+#define NEOFETCH_COLOR ANSI_FLIPPER_BRAND_ORANGE
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
 
     // Determine logo parameters
     size_t logo_height = COUNT_OF(neofetch_logo), logo_width = 0;
@@ -35,7 +50,11 @@ static void execute(PipeSide* pipe, FuriString* args, void* context) {
     // Format hostname delimiter
     const size_t size_of_hostname = 4 + strlen(furi_hal_version_get_name_ptr());
     char delimiter[64];
+<<<<<<< HEAD
     memset(delimiter, '~', size_of_hostname);
+=======
+    memset(delimiter, '-', size_of_hostname);
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
     delimiter[size_of_hostname] = '\0';
 
     // Get heap info
@@ -75,6 +94,7 @@ static void execute(PipeSide* pipe, FuriString* args, void* context) {
     // Print ASCII art with info
     const size_t info_height = 16;
     for(size_t i = 0; i < MAX(logo_height, info_height); i++) {
+<<<<<<< HEAD
         printf(
             NEOFETCH_COLOR "%-*s",
             logo_width,
@@ -82,13 +102,25 @@ static void execute(PipeSide* pipe, FuriString* args, void* context) {
         switch(i) {
         case 0: // you@<hostname>
             printf("you" ANSI_RESET "@" NEOFETCH_INFO_COLOR "%s", furi_hal_version_get_name_ptr());
+=======
+        printf(NEOFETCH_COLOR "%-*s", logo_width, (i < logo_height) ? neofetch_logo[i] : "");
+        switch(i) {
+        case 0: // you@<hostname>
+            printf("you" ANSI_RESET "@" NEOFETCH_COLOR "%s", furi_hal_version_get_name_ptr());
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
             break;
         case 1: // delimiter
             printf(ANSI_RESET "%s", delimiter);
             break;
+<<<<<<< HEAD
         case 2: // FW: FURI <edition> <branch> <version> <commit> (SDK <maj>.<min>)
             printf(
                 "FW" ANSI_RESET ": FURI %s %s %s %s (SDK %hu.%hu)",
+=======
+        case 2: // OS: FURI <edition> <branch> <version> <commit> (SDK <maj>.<min>)
+            printf(
+                "OS" ANSI_RESET ": FURI %s %s %s %s (SDK %hu.%hu)",
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
                 version_get_version(version),
                 version_get_gitbranch(version),
                 version_get_version(version),
@@ -158,7 +190,10 @@ static void execute(PipeSide* pipe, FuriString* args, void* context) {
         printf("\r\n");
     }
     printf(ANSI_RESET);
+<<<<<<< HEAD
 #undef NEOFETCH_INFO_COLOR
+=======
+>>>>>>> 2a5679dd09f09c7b21a6a76c3bd953aae0d6b2a5
 #undef NEOFETCH_COLOR
 }
 
